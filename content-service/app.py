@@ -5,7 +5,7 @@ import requests
 
 app = Flask(__name__)
 CORS(app)
-PORT = int(os.getenv("PORT", 5000))
+PORT = int(os.getenv("PORT", 5003))
 AUTH_URL = os.getenv("AUTH_SERVICE_URL", "http://localhost:8001")
 
 @app.get("/content/health")

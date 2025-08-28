@@ -5,7 +5,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 app = Flask(__name__)
 CORS(app)
-PORT = int(os.getenv("PORT", 5000))
+PORT = int(os.getenv("PORT", 5004))
 scheduler = BackgroundScheduler()
 scheduler.start()
 

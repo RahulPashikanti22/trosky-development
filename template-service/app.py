@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 CORS(app)
-PORT = int(os.getenv("PORT", 5000))
+PORT = int(os.getenv("PORT", 5010))
 
 @app.get("/template/health")
 def health():
