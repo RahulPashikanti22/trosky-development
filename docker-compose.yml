@@ -4,7 +4,7 @@ services:
     build: ./auth-service
     container_name: auth-service
     ports:
-      - "5000:5000"
+      - "5000:5001"
     env_file: ./auth-service/.env.sample
     depends_on: []
 
@@ -12,14 +12,14 @@ services:
     build: ./communication-service
     container_name: communication-service
     ports:
-      - "5000:5000"
+      - "5000:5002"
     env_file: ./communication-service/.env.sample
 
   content-service:
     build: ./content-service
     container_name: content-service
     ports:
-      - "5000:5000"
+      - "5000:5003"
     env_file: ./content-service/.env.sample
     depends_on:
       - auth-service
@@ -28,7 +28,7 @@ services:
     build: ./journey-service
     container_name: journey-service
     ports:
-      - "5000:5000"
+      - "5000:5004"
     env_file: ./journey-service/.env.sample
     depends_on:
       - auth-service
@@ -38,40 +38,40 @@ services:
     build: ./master-service
     container_name: master-service
     ports:
-      - "5000:5000"
+      - "5000:5005"
     env_file: ./master-service/.env.sample
 
   payment-service:
     build: ./payment-service
     container_name: payment-service
     ports:
-      - "5000:5000"
+      - "5000:5006"
     env_file: ./payment-service/.env.sample
 
   notification-service:
     build: ./notification-service
     container_name: notification-service
     ports:
-      - "5000:5000"
+      - "5000:5007"
     env_file: ./notification-service/.env.sample
 
   template-service:
     build: ./template-service
     container_name: template-service
     ports:
-      - "5000:5000"
+      - "5000:5008"
     env_file: ./template-service/.env.sample
 
   cron-service:
     build: ./cron-service
     container_name: cron-service
     ports:
-      - "5000:5000"
+      - "5000:5009"
     env_file: ./cron-service/.env.sample
 
   subscription-service:
     build: ./subscription-service
     container_name: subscription-service
     ports:
-      - "5000:5000"
+      - "5000:5010"
     env_file: ./subscription-service/.env.sample
