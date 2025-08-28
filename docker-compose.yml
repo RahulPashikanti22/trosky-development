@@ -1,0 +1,60 @@
+version: "3.9"
+services:
+  auth-service:
+    build: ./auth-service
+    container_name: auth-service
+    ports: ["8001:8001"]
+    env_file: ./auth-service/.env.sample
+    depends_on: []
+  communication-service:
+    build: ./communication-service
+    container_name: communication-service
+    ports: ["8002:8002"]
+    env_file: ./communication-service/.env.sample
+  content-service:
+    build: ./content-service
+    container_name: content-service
+    ports: ["8003:8003"]
+    env_file: ./content-service/.env.sample
+    depends_on: ["auth-service"]
+  journey-service:
+    build: ./journey-service
+    container_name: journey-service
+    ports: ["8004:8004"]
+    env_file: ./journey-service/.env.sample
+    depends_on: ["auth-service", "communication-service"]
+  master-service:
+    build: ./master-service
+    container_name: master-service
+    ports: ["8005:8005"]
+    env_file: ./master-service/.env.sample
+
+payment-service:
+  build: ./payment-service
+  container_name: payment-service
+  ports: ["8006:8006"]
+  env_file: ./payment-service/.env.sample
+
+notification-service:
+  build: ./notification-service
+  container_name: notification-service
+  ports: ["8007:8007"]
+  env_file: ./notification-service/.env.sample
+
+template-service:
+  build: ./template-service
+  container_name: template-service
+  ports: ["8008:8008"]
+  env_file: ./template-service/.env.sample
+
+cron-service:
+  build: ./cron-service
+  container_name: cron-service
+  ports: ["8009:8009"]
+  env_file: ./cron-service/.env.sample
+
+subscription-service:
+  build: ./subscription-service
+  container_name: subscription-service
+  ports: ["8010:8010"]
+  env_file: ./subscription-service/.env.sample
