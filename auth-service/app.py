@@ -7,7 +7,7 @@ import stripe
 app = Flask(__name__)
 CORS(app)
 
-PORT = int(os.getenv("PORT", 8001))
+PORT = int(os.getenv("PORT", 5000))
 COMM_URL = os.getenv("COMM_SERVICE_URL", "http://localhost:8002")
 stripe.api_key = os.getenv("STRIPE_API_KEY", "")
 
