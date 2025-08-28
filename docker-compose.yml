@@ -12,7 +12,7 @@ services:
     container_name: communication-service
     ports:
       - "5003:5002"
-    env_file: ./communication-service/.env.sample
+    
 
   content-service:
     build: ./content-service
